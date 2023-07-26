@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const app = express()
 app.use(cors())
+app.use(express.static('build'))
 
 morgan.token('data', (req,res) => JSON.stringify(req.body))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
@@ -38,7 +39,7 @@ const generateId = () => {
 }
 
 app.get('/', (request, response) => {
-    response.send('<h1>Phonebook backend, use <a href="/api/persons"> API </a> </h1>')
+    response.send('<h2>Phonebook backend:  </h2> <a href="/api/persons"> API </a> <br /> <a href="/info"> info </a>')
   })
 
 app.get('/info', (request, response) => {
