@@ -8,8 +8,8 @@ mongoose.connect(url)
     .then(result => {
         console.log('connected to mongoDb')
     })
-    .catch((err)=>{
-        console.log('error connectingto mongoDb:', err.message)
+    .catch((error)=>{
+        console.log('error connectingto mongoDb:', error.message)
     })
 
 const personSchema = new mongoose.Schema({
