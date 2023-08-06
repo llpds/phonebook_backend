@@ -31,10 +31,14 @@ app.use(express.json())
 
 let persons = []
 
-app.get('/info', (request, response) => {
-    const date = new Date()
-    const infoData = `<p> Phonebook has info for ${persons.length} people <br /><br /> ${date} </p>`
-    response.send(infoData)
+app.get('/info', (request, response, next) => {
+    Person.count()
+      .then(count => {
+        const date = new Date()
+        const infoData = `<p> Phonebook has info for ${count} people <br /><br /> ${date} </p>`
+        response.send(infoData)
+      })
+      .catch(error => next(error))
   })
 
   
