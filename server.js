@@ -41,6 +41,9 @@ app.get('/info', (request, response, next) => {
     .catch(error => next(error))
 })
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 
 app.get('/api/persons/', (request, response, next) => {
   Person.find({}).then(p => response.json(p))
