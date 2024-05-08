@@ -2,11 +2,7 @@ name: Health check
 
 on:
   schedule:
-    - cron: '15 10,11 * * *'
-    - cron: '40 12 * * *'
-  push:
-    branches:
-      - 11.20
+    - cron: '15 12,16 * * *'
 
 jobs:
   CI:
