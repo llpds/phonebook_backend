@@ -3,6 +3,9 @@ name: Health check
 on:
   # schedule:
   #   - cron: '15 12,16 * * *'
+  push:
+    branches:
+      - 11.20
 
 jobs:
   CI:
